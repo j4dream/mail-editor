@@ -1,0 +1,32 @@
+.App {
+  min-width: 1024px;
+  min-height: 500px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header {
+  background-color: dimgray;
+  height: 50px;
+}
+
+.header .save {
+  float: right;
+  margin: 8px;
+}
+
+.content {
+  width: calc(100% - 400px);
+  min-height: 500px;
+  padding: 0;
+}
+
+.silder {
+  width: 400px;
+  min-height: 500px;
+  border-left: 1px solid #ccc;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
