@@ -30,3 +30,14 @@
 .row {
   margin: 0;
 }
+
+.col {
+  background-color: #ccc;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 980px;
+  }
+}

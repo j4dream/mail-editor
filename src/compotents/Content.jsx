@@ -8,7 +8,8 @@ const buildContentTree = (node) => {
             createElement(Tpls[child.type],
               {
                 key: child.id,
-                className: child.className
+                className: child.className,
+                style: child.style,
               },
               buildContentTree(child)
             )

@@ -1,9 +1,13 @@
-import React, {useCallback, useContext} from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Tabs, Row, Col, Button } from 'antd';
+import { Context } from '../EditorContext';
+
 import oneColumn from '../json-tpl/one-column';
 import twoColumn from '../json-tpl/two-column';
-import { Context } from '../EditorContext';
-import { ADD_ONE_COLUMN, ADD_TWO_COLUMN } from '../actions';
+import threeColumn from '../json-tpl/three-column';
+import fourColumn from '../json-tpl/four-column';
+
+import { ADD_ONE_COLUMN, ADD_TWO_COLUMN, ADD_THREE_COLUMN, ADD_FOUR_COLUMN } from '../actions';
 
 const { TabPane } = Tabs;
 
@@ -17,6 +21,14 @@ export default () => {
 
   const addTwoColunm = useCallback(() => {
     dispatch({ action: ADD_TWO_COLUMN, data: twoColumn });
+  }, [dispatch]);
+
+  const addThreeColunm = useCallback(() => {
+    dispatch({ action: ADD_THREE_COLUMN, data: threeColumn });
+  }, [dispatch]);
+
+  const addFourColunm = useCallback(() => {
+    dispatch({ action: ADD_FOUR_COLUMN, data: fourColumn });
   }, [dispatch]);
 
   return (
@@ -43,6 +55,8 @@ export default () => {
       <TabPane tab="Row" key="2">
         <Button onClick={addOneColunm}>One Colunm</Button>
         <Button onClick={addTwoColunm}>Two Colunm</Button>
+        <Button onClick={addThreeColunm}>Three Colunm</Button>
+        <Button onClick={addFourColunm}>Four Colunm</Button>
       </TabPane>
       <TabPane tab="Setting" key="3">
         Content of tab 3

@@ -5,13 +5,19 @@ export default {
     {
       type: 'Col',
       style: '',
-      className: 'col col-md-6',
+      className: 'col col-md-4',
       children: []
     },
     {
       type: 'Col',
       style: '',
-      className: 'col col-md-6',
+      className: 'col col-md-4',
+      children: []
+    },
+    {
+      type: 'Col',
+      style: '',
+      className: 'col col-md-4',
       children: []
     }
   ]

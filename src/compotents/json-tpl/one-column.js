@@ -5,7 +5,7 @@ export default {
     {
       type: 'Col',
       style: '',
-      className: 'col-md-12',
+      className: 'col col-md-12',
       children: []
     }
   ]
