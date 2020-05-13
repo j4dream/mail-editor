@@ -11,10 +11,12 @@ export default class Node {
   style = '';
   className = '';
 
-  constructor({type, style, className = ''}) {
+  constructor({type, style, className = '', url = '', text = ''}) {
     this.type = type;
     this.style = style;
     this.className = className;
+    this.url = url;
+    this.text = text;
     this.id = getAscId();
   }
 

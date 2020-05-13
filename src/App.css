@@ -17,7 +17,9 @@
 .content {
   width: calc(100% - 400px);
   min-height: 500px;
+  height: calc(100vh - 52px);
   padding: 0;
+  overflow-y: scroll;
 }
 
 .silder {

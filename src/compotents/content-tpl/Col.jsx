@@ -3,10 +3,18 @@ import { useDrop } from '@umijs/hooks';
 
 import { FORCE_UPDATE } from '../actions';
 import imgTpl from '../json-tpl/image-content';
+import buttonTpl from '../json-tpl/button-content';
+import textTpl from '../json-tpl/text-content';
 
 import { Context } from '../EditorContext';
 
-export default ({children, className, node}) => {
+const tplFactory = {
+  image: imgTpl,
+  button: buttonTpl,
+  text: textTpl,
+};
+
+export default React.memo(({children, className, node}) => {
   console.log(children);
 
   const { dispatch } = useContext(Context);
@@ -14,7 +22,8 @@ export default ({children, className, node}) => {
   const [ props ] = useDrop({
     onDom: (content, e) => {
       console.log(`custom: ${content} dropped`, node)
-      node.children.push(imgTpl);
+
+      node.addChild(tplFactory[content]);
       dispatch({action: FORCE_UPDATE});
     }
   });
@@ -30,4 +39,4 @@ export default ({children, className, node}) => {
           : '没有内容，请添加'
         }
     </div>);
-}
+});
