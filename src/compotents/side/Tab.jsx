@@ -1,5 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 import { Tabs, Row, Col, Button } from 'antd';
+import { useDrag } from '@umijs/hooks';
+
 import { Context } from '../EditorContext';
 
 import oneColumn from '../json-tpl/one-column';
@@ -12,6 +14,8 @@ import { ADD_ONE_COLUMN, ADD_TWO_COLUMN, ADD_THREE_COLUMN, ADD_FOUR_COLUMN } fro
 const { TabPane } = Tabs;
 
 export default () => {
+
+  const getDragProps = useDrag();
 
   const { dispatch } = useContext(Context);
   
@@ -36,17 +40,17 @@ export default () => {
       <TabPane tab="Content" key="1">
         <Row>
           <Col span={8}>
-            <Button>
+            <Button {...getDragProps('text')}>
               Text
             </Button>
           </Col>
           <Col span={8}>
-            <Button>
+            <Button {...getDragProps('image')}>
               Image
             </Button>
           </Col>
           <Col span={8}>
-            <Button>
+            <Button {...getDragProps('button')}>
               Button
             </Button>
           </Col>
